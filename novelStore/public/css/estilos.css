@@ -1,0 +1,95 @@
+html, body, #app {
+    height: 100%;
+}
+
+#app {
+    display: grid;
+    grid-template-rows: 56px 1fr 100px;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    background-color: #480341;
+    color: #fff;
+}
+
+.footer p {
+    margin-bottom: 0;
+}
+
+
+/* Header */
+header {
+    
+    background-size: cover;
+    background-position: center;
+    padding: 100px 0; 
+}
+
+.jumbotron { 
+    padding: 40px;  
+}
+
+.full-height {
+    background-color: rgba(140, 87, 127, 0.8);
+    height: 30vh;  
+    display: flex;
+    justify-content: center;  
+    align-items: center;  
+    background-size: cover; 
+    background-position: center;
+}
+
+.jumbotron h1 {
+    font-style: italic;  
+    color: white;  
+    font-size: 3rem;  
+}
+
+.jumbotron p {
+    color: white;  
+    font-size: 1.5rem;  
+}
+
+
+/*Categorías index*/
+
+#categorias {
+    margin: 3em 0;
+}
+
+#categorias a {
+    text-decoration: none;
+    color: #333;
+}
+
+#categorias a:hover {
+    font-weight: bold;
+}
+
+/*Sobre Nosotros*/
+
+#sobre-nosotros h2 {
+    text-align: center;
+    margin-top: 1em;
+}
+
+.btn-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ffaaad;
+    color: #333;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn-link:hover {
+    font-weight: bold;
+    font-size: 1rem;
+    color: #333;
+}
