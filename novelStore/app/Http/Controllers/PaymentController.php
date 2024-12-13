@@ -34,7 +34,7 @@ class PaymentController extends Controller
                 'novel_title' => $novel->title,
                 'price' => $novel->price,
                 'cover' => $novel->cover,
-                'status' => 'pending',
+                'status' => PurchaseHistory::STATUS_PENDING,
             ]);
         }
 

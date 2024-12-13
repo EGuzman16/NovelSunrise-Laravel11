@@ -16,7 +16,7 @@ class MercadoPagoPayment
 
     public function __construct()
     {
-        // Levantamos las claves del config().
+        
         $this->mpAccessToken = config('mercadopago.access_token');
         $this->mpPublicKey = config('mercadopago.public_key');
 
