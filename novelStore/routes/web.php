@@ -96,6 +96,9 @@ Route::middleware(['auth'])->group(function () {
 
 // Proceso de Pago
 Route::post('/procesar-pago', [\App\Http\Controllers\PaymentController::class, 'processPayment'])->name('payment.process');
+Route::get('/pago-exitoso', [\App\Http\Controllers\PaymentController::class, 'success'])->name('payment.success');
+Route::get('/pago-fallido', [\App\Http\Controllers\PaymentController::class, 'failure'])->name('payment.failure');
+Route::get('/pago-pendiente', [\App\Http\Controllers\PaymentController::class, 'pending'])->name('payment.pending');
 
 // Carrito de Compras
 Route::get('carrito', [\App\Http\Controllers\CartController::class, 'show'])
@@ -121,9 +124,8 @@ Route::get('test/mercadopago/failure', [\App\Http\Controllers\MercadoPagoControl
 
 // Admin routes
 Route::middleware(['auth', CheckAdmin::class])->group(function () {
-    Route::get('/admin', function () {
-        return view('admin.index');
-    })->name('admin.index');
+    Route::get('/admin', [\App\Http\Controllers\AdminPurchaseController::class, 'index'])->name('admin.index');
+    Route::put('/admin/purchase/{id}', [\App\Http\Controllers\AdminPurchaseController::class, 'update'])->name('admin.purchase.update');
 
     Route::get('/admin/novelas', [\App\Http\Controllers\NovelsController::class, 'panel'])->name('novels.panel');
     Route::get('/admin/publicaciones', [\App\Http\Controllers\BlogsController::class, 'panel'])->name('blogs.panel');

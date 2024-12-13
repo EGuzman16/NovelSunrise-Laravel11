@@ -55,10 +55,11 @@
                             <a class="nav-link" href="{{ route('profile.edit') }}">Perfil</a>
                         </li>
                     
+                        @if(auth()->user()->role === 'Admin')
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('admin.index') }}">Admin</a>
                         </li>
-                     
+                        @endif                     
                         <li class="nav-item">
                             <form action="{{ route('auth.logout.process') }}" method="post">
                                 @csrf

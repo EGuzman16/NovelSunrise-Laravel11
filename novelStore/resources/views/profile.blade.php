@@ -51,8 +51,10 @@
             @foreach($purchaseHistories as $history)
                 <tr>
                     <td>
-                        @if($history->cover)
-                            <img src="{{ $history->cover }}" alt="{{ $history->novel_title }}" style="width: 50px; height: 50px;">
+                        @if($history->cover && \Storage::exists($history->cover))
+                            <img src="{{ \Storage::url($history->cover) }}" alt="{{ $history->novel_title }}" style="width: 50px; height: 50px;">
+                        @else
+                            <img src="{{ asset('img/default-cover.png') }}" alt="Imagen no disponible" style="width: 50px; height: 50px;">
                         @endif
                     </td>
                     <td>{{ $history->novel_title }}</td>

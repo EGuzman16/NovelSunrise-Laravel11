@@ -16,8 +16,8 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->string('novel_title');
             $table->decimal('price', 8, 2);
-            $table->string('cover')->nullable(); // Campo para la imagen de la novela
-            $table->string('status')->default('pending');
+            $table->string('cover')->nullable();  
+            $table->enum('status', ['PENDIENTE', 'PAGO'])->default('PENDIENTE');
             $table->timestamps();
         });
     }
